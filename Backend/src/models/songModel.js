@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const songSchema = new mangoose.Schema({
+const songSchema = new mongoose.Schema({
     name:{ type: String, required: true},
     desc:{ type: String, required: true},
     album:{ type: String, required: true},
@@ -11,4 +11,4 @@ const songSchema = new mangoose.Schema({
 
 const songModel = mongoose.models.song || mongoose.model("song",songSchema);
 
-export default songModel;
+export default songModel;
