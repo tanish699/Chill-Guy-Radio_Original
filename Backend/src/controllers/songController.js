@@ -1,7 +1,7 @@
 import {v2 as cloudinary} from 'cloudinary'
 import songModel from '../models/songModel.js'
 
-
+//Error Handling Middle Ware
 const addSong = async (req,res)=> {
     try {
         const name = req.body.name;
@@ -11,6 +11,8 @@ const addSong = async (req,res)=> {
         const imageFile = req.files.image[0];
         const audioUpload = await cloudinary.uploader.upload(audioFile.path, {resource_type: "video"});
         const imageUpload = await cloudinary.uploader.upload(imageFile.path, {resource_type: "image"});
+
+        console.log(name,desc,album,audioUpload,imageUpload);
 
         console.log(name, desc, album, audioUpload, imageUpload);
             
